@@ -17,13 +17,7 @@ pip install apache-airflow pandas mysql-connector-python boto3 snowflake-connect
 ```
 
 
-
-### Fina Takeways
-<p>This article outlines a practical approach to building an automated data pipeline using Python and Apache Airflow.
-  The example demonstrates how to extract data from a MySQL database, load it into an AWS S3 bucket, perform transformations, and finally ingest the processed data into Snowflake.</p>
-.
-
-Please refer to the respective documentation of the tools used:
+<p>Please refer to the respective documentation of the tools used:</p>
 
 - [Apache Airflow Documentation](https://airflow.apache.org/docs/)
 - [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/)
