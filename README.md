@@ -15,6 +15,7 @@ Install necessary Python packages:
 ```bash
 pip install apache-airflow pandas mysql-connector-python boto3 snowflake-connector-python
 ```
+![image](https://github.com/jayronsoares/frommysqltosnowflake/assets/248106/09bcfbc7-ba5d-4273-a4a4-97c65168a2ca)
 
 
 <p>Please refer to the respective documentation of the tools used:</p>
