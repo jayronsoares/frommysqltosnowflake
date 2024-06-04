@@ -112,13 +112,20 @@ def load_into_snowflake():
     )
     """)
 
-    # Insert DataFrame into Snowflake
-    for index, row in df.iterrows():
+    # Load DataFrame into Snowflake using COPY INTO
+    with conn.cursor() as cursor:
         cursor.execute("""
-        INSERT INTO transformed_sales (id, customer_name, order_date, amount, status) VALUES (%s, %s, %s, %s, %s)
-        """, (row['id'], row['customer_name'], row['order_date'], row['amount'], row['status']))
-
+        COPY INTO transformed_sales (id, customer_name, order_date, amount, status)
+        FROM 's3://your-bucket-name/transformed_sales_data.csv'
+        CREDENTIALS=(
+            AWS_KEY_ID='{0}',
+            AWS_SECRET_KEY='{1}'
+        )
+        FILE_FORMAT=(FORMAT_NAME=CSV)
+        """.format(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY))
     conn.close()
+"""
+
 
 # Define DAG
 default_args = {
