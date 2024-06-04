@@ -124,8 +124,6 @@ def load_into_snowflake():
         FILE_FORMAT=(FORMAT_NAME=CSV)
         """.format(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY))
     conn.close()
-"""
-
 
 # Define DAG
 default_args = {
